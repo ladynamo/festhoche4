@@ -1,9 +1,18 @@
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync
+} from "node:fs";
 import { extname, join, parse, relative } from "node:path";
 
 const fullRoot = join(process.cwd(), "docs/public/gallery-full");
 const thumbRoot = join(process.cwd(), "docs/public/gallery-thumb");
 const output = join(process.cwd(), "docs/.vitepress/data/gallery.ts");
+const albumsRoot = join(process.cwd(), "docs/albums");
+const generatedPageMarker = "<!-- generated-gallery-album -->";
 const supportedExtensions = new Set([
   ".jpg",
   ".jpeg",
@@ -128,8 +137,45 @@ lines.push("");
 mkdirSync(join(process.cwd(), "docs/.vitepress/data"), { recursive: true });
 writeFileSync(output, lines.join("\n"), "utf8");
 
+mkdirSync(albumsRoot, { recursive: true });
+for (const entry of readdirSync(albumsRoot, { withFileTypes: true })) {
+  if (!entry.isFile() || !entry.name.endsWith(".md") || entry.name === "index.md") {
+    continue;
+  }
+
+  const path = join(albumsRoot, entry.name);
+  if (readFileSync(path, "utf8").includes(generatedPageMarker)) {
+    rmSync(path);
+  }
+}
+
+for (const album of albums) {
+  const page = [
+    generatedPageMarker,
+    "",
+    "<script setup lang=\"ts\">",
+    "import { galleryAlbums } from \"../.vitepress/data/gallery\";",
+    "",
+    `const album = galleryAlbums.find((item) => item.id === "${escape(album.id)}")!;`,
+    "</script>",
+    "",
+    "# {{ album.title }}",
+    "",
+    "[Retour aux albums](/albums/)",
+    "",
+    "{{ album.photos.length }} photos.",
+    "",
+    "<GalleryGrid :photos=\"album.photos\" />",
+    ""
+  ];
+
+  writeFileSync(join(albumsRoot, `${album.id}.md`), page.join("\n"), "utf8");
+}
+
 const photoCount = albums.reduce(
   (total, album) => total + album.photos.length,
   0
 );
-console.log(`Generated ${photoCount} photos across ${albums.length} albums`);
+console.log(
+  `Generated ${photoCount} photos across ${albums.length} albums and ${albums.length} album pages`
+);

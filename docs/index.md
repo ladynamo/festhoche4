@@ -15,8 +15,8 @@ hero:
 ---
 
 <script setup lang="ts">
-import { withBase } from 'vitepress';
-import { galleryAlbums, galleryPhotos } from './.vitepress/data/gallery'
+import { withBase } from "vitepress";
+import { galleryAlbums, galleryPhotos } from "./.vitepress/data/gallery";
 </script>
 
 ## Galerie {#galerie}
@@ -24,7 +24,7 @@ import { galleryAlbums, galleryPhotos } from './.vitepress/data/gallery'
 {{ galleryPhotos.length }} photos reparties en {{ galleryAlbums.length }} albums.
 
 <div class="album-shortcuts">
-  <a v-for="album in galleryAlbums" :key="album.id" :href="withBase(`/albums/#${album.id}`)">
+  <a v-for="album in galleryAlbums" :key="album.id" :href="withBase(`/albums/${album.id}`)">
     <img :src="withBase(album.photos[0].thumb)" :alt="album.title" loading="lazy" decoding="async" />
     <span>{{ album.title }}</span>
     <small>{{ album.photos.length }} photos</small>

@@ -1,4 +1,10 @@
 import { defineConfig } from "vitepress";
+import { galleryAlbums } from "./data/gallery";
+
+const albumNavItems = galleryAlbums.map((album) => ({
+  text: album.title,
+  link: `/albums/${album.id}`
+}));
 
 export default defineConfig({
   title: "Fest'Hoche #4",
@@ -11,7 +17,10 @@ export default defineConfig({
     logo: "/logo.png",
     nav: [
       { text: "Galerie", link: "/" },
-      { text: "Albums", link: "/albums/" }
+      {
+        text: "Albums",
+        items: [{ text: "Tous les albums", link: "/albums/" }, ...albumNavItems]
+      }
     ],
     footer: {
       message: "Fest'Hoche #4",
