@@ -8,7 +8,7 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
-    logo: "/logo.svg",
+    logo: "/logo.png",
     nav: [
       { text: "Galerie", link: "/" },
       { text: "Albums", link: "/albums/" }
@@ -17,9 +17,6 @@ export default defineConfig({
     footer: {
       message: "Fest'Hoche #4",
       copyright: `Copyright (c) ${new Date().getFullYear()}`
-    },
-    search: {
-      provider: "local"
     }
   },
   head: [
