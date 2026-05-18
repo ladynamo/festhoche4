@@ -23,6 +23,8 @@ import { galleryAlbums, galleryPhotos } from "./.vitepress/data/gallery";
 
 {{ galleryPhotos.length }} photos reparties en {{ galleryAlbums.length }} albums.
 
+<p class="photo-credit">Photos : Alicja Pakulska</p>
+
 <div class="album-shortcuts">
   <a v-for="album in galleryAlbums" :key="album.id" :href="withBase(`/albums/${album.id}`)">
     <img :src="withBase(album.photos[0].thumb)" :alt="album.title" loading="lazy" decoding="async" />

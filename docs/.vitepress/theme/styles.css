@@ -82,6 +82,11 @@
   border-radius: 8px;
 }
 
+.photo-credit {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
 .album-shortcuts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));

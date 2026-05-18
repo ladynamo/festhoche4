@@ -165,6 +165,8 @@ for (const album of albums) {
     "",
     "{{ album.photos.length }} photos.",
     "",
+    "<p class=\"photo-credit\">Photos : Alicja Pakulska</p>",
+    "",
     "<GalleryGrid :photos=\"album.photos\" />",
     ""
   ];

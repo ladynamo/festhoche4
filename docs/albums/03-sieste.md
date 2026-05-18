@@ -12,4 +12,7 @@ const album = galleryAlbums.find((item) => item.id === "03-sieste")!;
 
 {{ album.photos.length }} photos.
 
+<p class="photo-credit">Photos : Alicja Pakulska</p>
+
 <GalleryGrid :photos="album.photos" />
+

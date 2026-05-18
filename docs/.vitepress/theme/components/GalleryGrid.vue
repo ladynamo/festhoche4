@@ -18,9 +18,16 @@ const props = defineProps<{
 
 const root = ref<HTMLElement | null>(null);
 let gallery: { destroy: () => void } | null = null;
+const photoCredit = "Photo : Alicja Pakulska";
 
 function assetUrl(path: string) {
   return /^https?:\/\//.test(path) ? path : withBase(path);
+}
+
+function caption(photo: Photo) {
+  const description = photo.description ? `<p>${photo.description}</p>` : "";
+
+  return `<h4>${photo.title}</h4>${description}<p>${photoCredit}</p>`;
 }
 
 onMounted(async () => {
@@ -65,7 +72,7 @@ onBeforeUnmount(() => {
       class="gallery-card"
       :href="assetUrl(photo.src)"
       :data-src="assetUrl(photo.src)"
-      :data-sub-html="`<h4>${photo.title}</h4>${photo.description ? `<p>${photo.description}</p>` : ''}`"
+      :data-sub-html="caption(photo)"
       :aria-label="`Ouvrir ${photo.title}`"
     >
       <img
@@ -75,7 +82,7 @@ onBeforeUnmount(() => {
         decoding="async"
       />
       <span>
-        <small v-if="photo.description">{{ photo.description }}</small>
+        <small v-if="photo.description"></small>
       </span>
     </a>
   </div>
