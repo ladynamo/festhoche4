@@ -1,4 +1,4 @@
-﻿export type GalleryPhoto = {
+export type GalleryPhoto = {
   src: string
   thumb: string
   title: string

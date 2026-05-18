@@ -9,7 +9,9 @@
     "dev": "vitepress dev docs",
     "prebuild": "npm run gallery:update",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "lightgallery": "^2.8.3"

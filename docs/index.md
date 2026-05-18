@@ -8,10 +8,10 @@ hero:
   actions:
     - theme: brand
       text: Voir la galerie
-      link: '#galerie'
+      link: "#galerie"
     - theme: alt
       text: Albums
-      link: '/albums/'
+      link: "/albums/"
 ---
 
 <script setup lang="ts">
