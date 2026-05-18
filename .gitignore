@@ -1,4 +1,6 @@
 docs/public/gallery-original/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
 
 # Logs
 logs
