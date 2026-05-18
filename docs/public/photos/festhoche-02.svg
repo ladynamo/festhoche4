@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Scene">
-  <rect width="1200" height="900" fill="#101820"/>
-  <path d="M120 730h960l-94-250H214Z" fill="#1f2933"/>
-  <path d="M300 120 180 620h94l104-500Zm600 0 26 500h94L900 120Z" fill="#f26b4f" opacity=".8"/>
-  <path d="M448 180h304l74 290H374Z" fill="#ffd166"/>
-  <rect x="330" y="520" width="540" height="120" fill="#0b0f14"/>
-  <text x="72" y="120" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Scene</text>
-  <text x="72" y="184" fill="#fff" opacity=".78" font-family="Arial, sans-serif" font-size="30">Concerts et performances</text>
-</svg>

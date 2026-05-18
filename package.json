@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "gallery:update": "node scripts/generate-gallery-manifest.mjs",
+    "predev": "npm run gallery:update",
     "dev": "vitepress dev docs",
+    "prebuild": "npm run gallery:update",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs"
   },

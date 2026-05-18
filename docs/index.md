@@ -15,32 +15,20 @@ hero:
 ---
 
 <script setup lang="ts">
-const photos = [
-  {
-    src: '/photos/festhoche-01.svg',
-    title: 'Ouverture',
-    description: 'Ambiance de lancement'
-  },
-  {
-    src: '/photos/festhoche-02.svg',
-    title: 'Scene',
-    description: 'Concerts et performances'
-  },
-  {
-    src: '/photos/festhoche-03.svg',
-    title: 'Public',
-    description: 'Moments partages'
-  },
-  {
-    src: '/photos/festhoche-04.svg',
-    title: 'Coulisses',
-    description: 'Preparation et benevoles'
-  }
-]
+import { withBase } from 'vitepress'
+import { galleryAlbums, galleryPhotos } from './.vitepress/data/gallery'
 </script>
 
 ## Galerie {#galerie}
 
-Remplacez les visuels de demonstration dans `docs/public/photos` par les photos definitives, puis mettez a jour la liste `photos` dans cette page.
+{{ galleryPhotos.length }} photos reparties en {{ galleryAlbums.length }} albums.
 
-<GalleryGrid :photos="photos" />
+<div class="album-shortcuts">
+  <a v-for="album in galleryAlbums" :key="album.id" :href="withBase(`/albums/#${album.id}`)">
+    <img :src="withBase(album.photos[0].thumb)" :alt="album.title" loading="lazy" decoding="async" />
+    <span>{{ album.title }}</span>
+    <small>{{ album.photos.length }} photos</small>
+  </a>
+</div>
+
+<GalleryGrid :photos="galleryPhotos" />

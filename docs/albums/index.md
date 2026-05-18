@@ -1,10 +1,11 @@
+<script setup lang="ts">
+import { galleryAlbums } from '../.vitepress/data/gallery'
+</script>
+
 # Albums
 
-Cette page peut regrouper les series de photos du Fest'Hoche #4 par temps fort.
-
-- Ouverture
-- Concerts
-- Public
-- Coulisses
-
-Ajoutez de nouvelles pages Markdown dans ce dossier pour creer des albums separes.
+<section v-for="album in galleryAlbums" :key="album.id" :id="album.id" class="album-section">
+  <h2>{{ album.title }}</h2>
+  <p>{{ album.photos.length }} photos</p>
+  <GalleryGrid :photos="album.photos" />
+</section>

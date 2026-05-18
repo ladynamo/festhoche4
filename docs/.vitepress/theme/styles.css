@@ -79,6 +79,56 @@
   border-radius: 8px;
 }
 
+.album-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin: 24px 0 34px;
+}
+
+.album-shortcuts a {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-soft);
+  text-decoration: none;
+}
+
+.album-shortcuts img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.album-shortcuts span,
+.album-shortcuts small {
+  padding: 0 12px;
+}
+
+.album-shortcuts span {
+  padding-top: 10px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.album-shortcuts small {
+  padding-top: 3px;
+  padding-bottom: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.album-section {
+  scroll-margin-top: 92px;
+  margin-top: 36px;
+}
+
+.album-section > p {
+  color: var(--vp-c-text-2);
+}
+
 @media (max-width: 640px) {
   .gallery-grid {
     grid-template-columns: 1fr;
