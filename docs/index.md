@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Fest'Hoche #4"
   text: "Galerie photos"
-  tagline: "Les meilleurs moments du festival, prets a etre parcourus en plein ecran."
+  tagline: "Les meilleurs moments du festival, prêts à être parcourus en plein écran."
   actions:
     - theme: brand
       text: Voir la galerie
@@ -15,7 +15,7 @@ hero:
 ---
 
 <script setup lang="ts">
-import { withBase } from 'vitepress'
+import { withBase } from 'vitepress';
 import { galleryAlbums, galleryPhotos } from './.vitepress/data/gallery'
 </script>
 
