@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Ouverture">
+  <defs>
+    <linearGradient id="a" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#171717"/>
+      <stop offset=".56" stop-color="#6f1d1b"/>
+      <stop offset="1" stop-color="#f26b4f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#a)"/>
+  <circle cx="930" cy="180" r="92" fill="#ffd166" opacity=".85"/>
+  <path d="M0 674c176-90 320-116 474-64 140 48 270 44 408-18 118-53 218-56 318-18v326H0Z" fill="#0f0f0f" opacity=".72"/>
+  <text x="72" y="120" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Fest'Hoche #4</text>
+  <text x="72" y="184" fill="#fff" opacity=".78" font-family="Arial, sans-serif" font-size="30">Ouverture</text>
+</svg>

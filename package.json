@@ -1,0 +1,19 @@
+{
+  "name": "festhoche4-gallery",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "lightgallery": "^2.8.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.1",
+    "typescript": "^5.8.3",
+    "vitepress": "^1.6.3"
+  }
+}

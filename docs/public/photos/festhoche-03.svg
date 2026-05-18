@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Public">
+  <rect width="1200" height="900" fill="#202124"/>
+  <path d="M0 580c150-70 244 14 360-42 104-50 186-112 338-28 148 82 296 34 502-48v438H0Z" fill="#b3261e"/>
+  <g fill="#fff" opacity=".9">
+    <circle cx="220" cy="430" r="48"/>
+    <circle cx="388" cy="468" r="42"/>
+    <circle cx="560" cy="410" r="56"/>
+    <circle cx="750" cy="470" r="44"/>
+    <circle cx="930" cy="420" r="52"/>
+  </g>
+  <text x="72" y="120" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Public</text>
+  <text x="72" y="184" fill="#fff" opacity=".78" font-family="Arial, sans-serif" font-size="30">Moments partages</text>
+</svg>

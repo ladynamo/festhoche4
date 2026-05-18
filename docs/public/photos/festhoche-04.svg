@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Coulisses">
+  <rect width="1200" height="900" fill="#171717"/>
+  <rect x="146" y="148" width="908" height="584" rx="28" fill="#f4f1e8"/>
+  <path d="M216 640 466 338l176 212 92-110 250 300H216Z" fill="#2f4858"/>
+  <circle cx="792" cy="282" r="82" fill="#f26b4f"/>
+  <text x="72" y="120" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Coulisses</text>
+  <text x="72" y="806" fill="#fff" opacity=".78" font-family="Arial, sans-serif" font-size="30">Preparation et benevoles</text>
+</svg>
