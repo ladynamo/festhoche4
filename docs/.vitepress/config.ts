@@ -13,7 +13,6 @@ export default defineConfig({
       { text: "Galerie", link: "/" },
       { text: "Albums", link: "/albums/" }
     ],
-    socialLinks: [{ icon: "github", link: "https://github.com/" }],
     footer: {
       message: "Fest'Hoche #4",
       copyright: `Copyright (c) ${new Date().getFullYear()}`
