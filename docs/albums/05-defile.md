@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 <!-- generated-gallery-album -->
 
 <script setup lang="ts">
@@ -15,4 +19,3 @@ const album = galleryAlbums.find((item) => item.id === "05-defile")!;
 <p class="photo-credit">Photos : Alicja Pakulska</p>
 
 <GalleryGrid :photos="album.photos" />
-

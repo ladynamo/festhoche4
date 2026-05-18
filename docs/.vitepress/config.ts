@@ -25,7 +25,8 @@ export default defineConfig({
     footer: {
       message: "Fest'Hoche #4",
       copyright: `Copyright (c) ${new Date().getFullYear()}`
-    }
+    },
+    outline: false
   },
   head: [
     ["meta", { property: "og:title", content: "Fest'Hoche #4" }],

@@ -151,6 +151,10 @@ for (const entry of readdirSync(albumsRoot, { withFileTypes: true })) {
 
 for (const album of albums) {
   const page = [
+    "---",
+    "aside: false",
+    "---",
+    "",
     generatedPageMarker,
     "",
     "<script setup lang=\"ts\">",

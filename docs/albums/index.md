@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 <script setup lang="ts">
 import { withBase } from "vitepress";
 import { galleryAlbums } from "../.vitepress/data/gallery";
