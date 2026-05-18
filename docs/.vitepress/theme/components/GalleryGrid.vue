@@ -75,12 +75,11 @@ onBeforeUnmount(() => {
         decoding="async"
       />
       <span>
-        <strong>{{ photo.title }}</strong>
         <small v-if="photo.description">{{ photo.description }}</small>
       </span>
     </a>
   </div>
   <p v-else class="empty-gallery">
-    Ajoutez des photos dans <code>docs/public/photos</code>.
+    Cette galerie est vide...
   </p>
 </template>
