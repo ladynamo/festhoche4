@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Fest'Hoche #4",
   description: "Galerie photos du Fest'Hoche #4",
-  base: "/FestHoche4Gallery/",
+  base: "/festhoche4/",
   lang: "fr-FR",
   cleanUrls: true,
   lastUpdated: true,
