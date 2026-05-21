@@ -8,7 +8,7 @@ const albumNavItems = galleryAlbums.map((album) => ({
 
 export default defineConfig({
   title: "Fest'Hoche #4",
-  description: "Galerie photos du Fest'Hoche #4",
+  description: "Chronologie photo du Fest'Hoche #4",
   base: "/festhoche4/",
   lang: "fr-FR",
   cleanUrls: true,
@@ -16,7 +16,7 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.png",
     nav: [
-      { text: "Galerie", link: "/" },
+      { text: "Chronologie", link: "/" },
       {
         text: "Albums",
         items: [{ text: "Tous les albums", link: "/albums/" }, ...albumNavItems]
@@ -34,7 +34,7 @@ export default defineConfig({
       "meta",
       {
         property: "og:description",
-        content: "Galerie photos du Fest'Hoche #4"
+        content: "Chronologie photo du Fest'Hoche #4"
       }
     ],
     ["meta", { name: "theme-color", content: "#171717" }]

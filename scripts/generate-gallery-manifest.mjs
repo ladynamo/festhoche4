@@ -22,15 +22,65 @@ const supportedExtensions = new Set([
 ]);
 
 const albumTitles = {
-  "01-dvr": "DVR",
-  "02-banquet": "Banquet",
-  "03-sieste": "Sieste",
+  "01-dvr": "Disco-Vélo-Roller",
+  "02-banquet": "Le Grand Banquet",
+  "03-sieste": "La sieste musicale",
   "04-ateliers-animations-ambiance": "Ateliers, animations et ambiance",
-  "05-defile": "Defile",
-  "06-danse": "Danse",
+  "05-defile": "Le défilé de Slow Fashion",
+  "06-danse": "Les performances de danse",
   "07-discours-radios": "Discours et radios",
-  "08-concert-aly": "Concert Aly",
-  "09-concert-lorke-lorke": "Concert Lorke Lorke"
+  "08-concert-aly": "Le set de Dj Aly",
+  "09-concert-lorke-lorke": "Le concert de Lorkê Lorkê"
+};
+
+const albumDetails = {
+  "01-dvr": {
+    timeRange: "10h30 - 12h",
+    description:
+      "La Disco-Vélo-Roller (DVR) est un convoi joyeux, festif et bruyant, pour célébrer les mobilités douces. C'est un évènement Mai à Vélo"
+  },
+  "02-banquet": {
+    timeRange: "12h - 14h",
+    description:
+      "Une grande auberge espagnole pour partager son repas dans un moment convivial."
+  },
+  "03-sieste": {
+    timeRange: "14h - 17h",
+    description:
+      "En direct depuis la plage Doumergue, Raje et Rayvox vous accueillent avec une sélection musicale pleine de douceur, où délicatesse et quiétude vous étreindront le temps de cette pause suspendue ✨"
+  },
+  "04-ateliers-animations-ambiance": {
+    timeRange: "14h - 17h",
+    description:
+      "Un moment pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. "
+  },
+  "05-defile": {
+    timeRange: "17h30 - 18h",
+    description:
+      "Sur le tapis rouge..." +
+      "des femmes, des hommes, des enfants, tous âges et toutes silhouettes confondues 💛" +
+      "Des looks issus du réemploi, choisis avec soin et pleins de créativité" +
+      "Parce que la mode, c’est avant tout une affaire d’expression, pas de consommation à outrance !"
+  },
+  "06-danse": {
+    timeRange: "18h30 - 19h15",
+    description:
+      "une parenthèse dansée participative, une création inédite où le public sera invité à prendre part."
+  },
+  "07-discours-radios": {
+    timeRange: "",
+    description: ""
+  },
+  "08-concert-aly": {
+    timeRange: "19h30 - 21h30",
+    description:
+      "DJ Aly a pris les platines pour un warm-up envoûtant, mêlant sonorités balkaniques, afro, électro organiques et tropical house. Un set hypnotique, véritable invitation au voyage."
+  },
+  "09-concert-lorke-lorke": {
+    timeRange: "22h - 23h30",
+    description:
+      "Place au groupe toulousain Lorkê Lorkê : une plongée sensorielle portée par une voix enchanteresse, des synthés psychédéliques et de nombreuses improvisations. Leur musique oscille entre énergie et introspection, danse et contemplation."
+  }
 };
 
 function slash(path) {
@@ -88,6 +138,8 @@ function listPhotos(album) {
 const albums = listAlbums(fullRoot).map((id) => ({
   id,
   title: titleFromAlbum(id),
+  timeRange: albumDetails[id]?.timeRange ?? "",
+  description: albumDetails[id]?.description ?? "",
   photos: listPhotos(id)
 }));
 
@@ -102,6 +154,8 @@ const lines = [
   "export type GalleryAlbum = {",
   "  id: string",
   "  title: string",
+  "  timeRange?: string",
+  "  description?: string",
   "  photos: GalleryPhoto[]",
   "}",
   "",
@@ -112,6 +166,8 @@ for (const album of albums) {
   lines.push("  {");
   lines.push(`    id: '${escape(album.id)}',`);
   lines.push(`    title: '${escape(album.title)}',`);
+  lines.push(`    timeRange: '${escape(album.timeRange)}',`);
+  lines.push(`    description: '${escape(album.description)}',`);
   lines.push("    photos: [");
 
   for (const photo of album.photos) {

@@ -3,12 +3,12 @@ layout: home
 
 hero:
   name: "Fest'Hoche #4"
-  text: "Galerie photos"
+  text: "Chronologie"
   tagline: "Les meilleurs moments du festival, prêts à être parcourus en plein écran."
   actions:
     - theme: brand
-      text: Voir la galerie
-      link: "#galerie"
+      text: Voir la chronologie
+      link: "#chronologie"
     - theme: alt
       text: Albums
       link: "/albums/"
@@ -19,7 +19,7 @@ import { withBase } from "vitepress";
 import { galleryAlbums, galleryPhotos } from "./.vitepress/data/gallery";
 </script>
 
-## Galerie {#galerie}
+## Chronologie {#chronologie}
 
 {{ galleryPhotos.length }} photos reparties en {{ galleryAlbums.length }} albums.
 
@@ -33,4 +33,14 @@ import { galleryAlbums, galleryPhotos } from "./.vitepress/data/gallery";
   </a>
 </div>
 
-<GalleryGrid :photos="galleryPhotos" />
+<section v-for="album in galleryAlbums" :id="album.id" :key="album.id" class="timeline-album">
+  <header class="timeline-album-heading">
+    <p v-if="album.timeRange" class="timeline-album-time">{{ album.timeRange }}</p>
+    <h3>{{ album.title }}</h3>
+    <p v-if="album.description" class="timeline-album-description">
+      {{ album.description }}
+    </p>
+  </header>
+
+  <GalleryGrid :photos="album.photos" />
+</section>
