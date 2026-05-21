@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { withBase } from "vitepress";
+import { galleryDisplayMode, initGalleryDisplayMode } from "../galleryDisplayMode";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-thumbnail.css";
 import "lightgallery/css/lg-zoom.css";
@@ -20,6 +21,7 @@ const root = ref<HTMLElement | null>(null);
 let gallery: { destroy: () => void; refresh?: () => void } | null = null;
 const photoCredit = "Photo : Alicja Pakulska";
 const masonryColumnCount = ref(4);
+const isLooseMode = computed(() => galleryDisplayMode.value === "loose");
 
 const masonryColumns = computed(() =>
   Array.from({ length: masonryColumnCount.value }, (_, columnIndex) =>
@@ -46,7 +48,13 @@ watch(masonryColumnCount, async () => {
   gallery?.refresh?.();
 });
 
+watch(galleryDisplayMode, async () => {
+  await nextTick();
+  gallery?.refresh?.();
+});
+
 onMounted(async () => {
+  initGalleryDisplayMode();
   updateMasonryColumnCount();
   window.addEventListener("resize", updateMasonryColumnCount);
 
@@ -85,15 +93,44 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div v-if="photos.length" ref="root" class="gallery-grid">
-    <div
-      v-for="(column, columnIndex) in masonryColumns"
-      :key="columnIndex"
-      class="gallery-column"
-      :class="`gallery-column-${columnIndex + 1}`"
-    >
+  <div
+    v-if="photos.length"
+    ref="root"
+    class="gallery-grid"
+    :class="isLooseMode ? 'gallery-grid-loose' : 'gallery-grid-classic'"
+  >
+    <template v-if="isLooseMode">
+      <div
+        v-for="(column, columnIndex) in masonryColumns"
+        :key="columnIndex"
+        class="gallery-column"
+        :class="`gallery-column-${columnIndex + 1}`"
+      >
+        <a
+          v-for="photo in column"
+          :key="photo.src"
+          class="gallery-card"
+          :href="assetUrl(photo.src)"
+          :data-src="assetUrl(photo.src)"
+          :data-sub-html="caption(photo)"
+          :aria-label="`Ouvrir ${photo.title}`"
+        >
+          <img
+            :src="assetUrl(photo.thumb || photo.src)"
+            :alt="photo.title"
+            loading="lazy"
+            decoding="async"
+          />
+          <span>
+            <small v-if="photo.description"></small>
+          </span>
+        </a>
+      </div>
+    </template>
+
+    <template v-else>
       <a
-        v-for="photo in column"
+        v-for="photo in photos"
         :key="photo.src"
         class="gallery-card"
         :href="assetUrl(photo.src)"
@@ -111,7 +148,7 @@ onBeforeUnmount(() => {
           <small v-if="photo.description"></small>
         </span>
       </a>
-    </div>
+    </template>
   </div>
   <p v-else class="empty-gallery">
     Cette galerie est vide...
