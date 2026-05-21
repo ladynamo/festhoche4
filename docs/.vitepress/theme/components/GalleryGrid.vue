@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { withBase } from "vitepress";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-thumbnail.css";
@@ -17,8 +17,15 @@ const props = defineProps<{
 }>();
 
 const root = ref<HTMLElement | null>(null);
-let gallery: { destroy: () => void } | null = null;
+let gallery: { destroy: () => void; refresh?: () => void } | null = null;
 const photoCredit = "Photo : Alicja Pakulska";
+const masonryColumnCount = ref(4);
+
+const masonryColumns = computed(() =>
+  Array.from({ length: masonryColumnCount.value }, (_, columnIndex) =>
+    props.photos.filter((_, photoIndex) => photoIndex % masonryColumnCount.value === columnIndex)
+  ).filter((column) => column.length > 0)
+);
 
 function assetUrl(path: string) {
   return /^https?:\/\//.test(path) ? path : withBase(path);
@@ -30,7 +37,19 @@ function caption(photo: Photo) {
   return `<h4>${photo.title}</h4>${description}<p>${photoCredit}</p>`;
 }
 
+function updateMasonryColumnCount() {
+  masonryColumnCount.value = window.matchMedia("(max-width: 640px)").matches ? 2 : 4;
+}
+
+watch(masonryColumnCount, async () => {
+  await nextTick();
+  gallery?.refresh?.();
+});
+
 onMounted(async () => {
+  updateMasonryColumnCount();
+  window.addEventListener("resize", updateMasonryColumnCount);
+
   await nextTick();
 
   if (!root.value || props.photos.length === 0) {
@@ -59,6 +78,7 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateMasonryColumnCount);
   gallery?.destroy();
   gallery = null;
 });
@@ -66,25 +86,32 @@ onBeforeUnmount(() => {
 
 <template>
   <div v-if="photos.length" ref="root" class="gallery-grid">
-    <a
-      v-for="photo in photos"
-      :key="photo.src"
-      class="gallery-card"
-      :href="assetUrl(photo.src)"
-      :data-src="assetUrl(photo.src)"
-      :data-sub-html="caption(photo)"
-      :aria-label="`Ouvrir ${photo.title}`"
+    <div
+      v-for="(column, columnIndex) in masonryColumns"
+      :key="columnIndex"
+      class="gallery-column"
+      :class="`gallery-column-${columnIndex + 1}`"
     >
-      <img
-        :src="assetUrl(photo.thumb || photo.src)"
-        :alt="photo.title"
-        loading="lazy"
-        decoding="async"
-      />
-      <span>
-        <small v-if="photo.description"></small>
-      </span>
-    </a>
+      <a
+        v-for="photo in column"
+        :key="photo.src"
+        class="gallery-card"
+        :href="assetUrl(photo.src)"
+        :data-src="assetUrl(photo.src)"
+        :data-sub-html="caption(photo)"
+        :aria-label="`Ouvrir ${photo.title}`"
+      >
+        <img
+          :src="assetUrl(photo.thumb || photo.src)"
+          :alt="photo.title"
+          loading="lazy"
+          decoding="async"
+        />
+        <span>
+          <small v-if="photo.description"></small>
+        </span>
+      </a>
+    </div>
   </div>
   <p v-else class="empty-gallery">
     Cette galerie est vide...
