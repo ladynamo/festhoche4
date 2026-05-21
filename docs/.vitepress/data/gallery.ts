@@ -14,7 +14,7 @@ export type GalleryAlbum = {
 export const galleryAlbums: GalleryAlbum[] = [
   {
     id: '01-dvr',
-    title: 'La Disco-Vélo-Roller',
+    title: 'DVR',
     photos: [
       {
         src: '/gallery-full/01-dvr/DSC08070.jpg',
@@ -344,7 +344,7 @@ export const galleryAlbums: GalleryAlbum[] = [
   },
   {
     id: '02-banquet',
-    title: 'Le Grand Banquet',
+    title: 'Banquet',
     photos: [
       {
         src: '/gallery-full/02-banquet/DSC08187.jpg',
@@ -404,7 +404,7 @@ export const galleryAlbums: GalleryAlbum[] = [
   },
   {
     id: '03-sieste',
-    title: 'La sieste',
+    title: 'Sieste',
     photos: [
       {
         src: '/gallery-full/03-sieste/DSC08198.jpg',
@@ -872,7 +872,7 @@ export const galleryAlbums: GalleryAlbum[] = [
   },
   {
     id: '05-defile',
-    title: 'Le défilé de Slow Fashion',
+    title: 'Defile',
     photos: [
       {
         src: '/gallery-full/05-defile/DSC08348.jpg',
@@ -1046,7 +1046,7 @@ export const galleryAlbums: GalleryAlbum[] = [
   },
   {
     id: '06-danse',
-    title: 'Les performances de danse',
+    title: 'Danse',
     photos: [
       {
         src: '/gallery-full/06-danse/DSC08412.jpg',
@@ -1520,7 +1520,7 @@ export const galleryAlbums: GalleryAlbum[] = [
   },
   {
     id: '08-concert-aly',
-    title: 'Mix de Dj Aly',
+    title: 'Concert Aly',
     photos: [
       {
         src: '/gallery-full/08-concert-aly/DSC08548.jpg',
@@ -1730,7 +1730,7 @@ export const galleryAlbums: GalleryAlbum[] = [
   },
   {
     id: '09-concert-lorke-lorke',
-    title: 'Concert de Lorkê Lorkê',
+    title: 'Concert Lorke Lorke',
     photos: [
       {
         src: '/gallery-full/09-concert-lorke-lorke/DSC08615.jpg',
