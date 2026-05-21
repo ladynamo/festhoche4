@@ -6,10 +6,12 @@ const albumNavItems = galleryAlbums.map((album) => ({
   link: `/albums/${album.id}`
 }));
 
+const siteBase = "/festhoche4/";
+
 export default defineConfig({
   title: "Fest'Hoche #4",
   description: "Chronologie photo du Fest'Hoche #4",
-  base: "/festhoche4/",
+  base: siteBase,
   lang: "fr-FR",
   cleanUrls: true,
   lastUpdated: true,
@@ -29,6 +31,8 @@ export default defineConfig({
     outline: false
   },
   head: [
+    ["link", { rel: "icon", type: "image/png", href: `${siteBase}logo.png` }],
+    ["link", { rel: "shortcut icon", type: "image/png", href: `${siteBase}logo.png` }],
     ["meta", { property: "og:title", content: "Fest'Hoche #4" }],
     [
       "meta",
