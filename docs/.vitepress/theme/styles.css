@@ -153,6 +153,21 @@
   font-size: 14px;
 }
 
+.VPDoc:has(.vp-doc[class*="albums_"]) .container,
+.VPDoc:has(.vp-doc[class*="albums_"]) .content,
+.VPDoc:has(.vp-doc[class*="albums_"]) .content-container {
+  max-width: none !important;
+}
+
+.VPDoc:has(.vp-doc[class*="albums_"]) .container {
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.vp-doc[class*="albums_"] .gallery-grid-classic {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
 .album-shortcuts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -255,11 +270,16 @@
   }
 
   .gallery-grid-classic {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery-grid {
     gap: 10px;
+  }
+
+  .VPDoc:has(.vp-doc[class*="albums_"]) .container {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .gallery-column {

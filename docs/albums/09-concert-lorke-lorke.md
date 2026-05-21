@@ -1,5 +1,6 @@
 ---
 aside: false
+pageClass: album-page
 ---
 
 <!-- generated-gallery-album -->

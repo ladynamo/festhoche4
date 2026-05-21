@@ -209,6 +209,7 @@ for (const album of albums) {
   const page = [
     "---",
     "aside: false",
+    "pageClass: album-page",
     "---",
     "",
     generatedPageMarker,
