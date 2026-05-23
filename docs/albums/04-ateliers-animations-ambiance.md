@@ -1,4 +1,5 @@
 ---
+title: "Ateliers, animations et ambiance"
 aside: false
 pageClass: album-page
 ---
@@ -11,7 +12,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 const album = galleryAlbums.find((item) => item.id === "04-ateliers-animations-ambiance")!;
 </script>
 
-# {{ album.title }}
+# Ateliers, animations et ambiance
 
 [Retour aux albums](/albums/)
 

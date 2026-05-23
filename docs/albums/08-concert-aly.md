@@ -1,4 +1,5 @@
 ---
+title: "Le set de Dj Aly"
 aside: false
 pageClass: album-page
 ---
@@ -11,7 +12,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 const album = galleryAlbums.find((item) => item.id === "08-concert-aly")!;
 </script>
 
-# {{ album.title }}
+# Le set de Dj Aly
 
 [Retour aux albums](/albums/)
 

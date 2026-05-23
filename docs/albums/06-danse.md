@@ -1,4 +1,5 @@
 ---
+title: "Les performances de danse"
 aside: false
 pageClass: album-page
 ---
@@ -11,7 +12,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 const album = galleryAlbums.find((item) => item.id === "06-danse")!;
 </script>
 
-# {{ album.title }}
+# Les performances de danse
 
 [Retour aux albums](/albums/)
 

@@ -1,4 +1,5 @@
 ---
+title: "Le Grand Banquet"
 aside: false
 pageClass: album-page
 ---
@@ -11,7 +12,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 const album = galleryAlbums.find((item) => item.id === "02-banquet")!;
 </script>
 
-# {{ album.title }}
+# Le Grand Banquet
 
 [Retour aux albums](/albums/)
 

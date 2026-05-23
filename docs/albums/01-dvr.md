@@ -1,4 +1,5 @@
 ---
+title: "Disco-Vélo-Roller"
 aside: false
 pageClass: album-page
 ---
@@ -11,7 +12,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 const album = galleryAlbums.find((item) => item.id === "01-dvr")!;
 </script>
 
-# {{ album.title }}
+# Disco-Vélo-Roller
 
 [Retour aux albums](/albums/)
 

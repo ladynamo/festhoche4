@@ -1,4 +1,5 @@
 ---
+title: "Discours et radios"
 aside: false
 pageClass: album-page
 ---
@@ -11,7 +12,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 const album = galleryAlbums.find((item) => item.id === "07-discours-radios")!;
 </script>
 
-# {{ album.title }}
+# Discours et radios
 
 [Retour aux albums](/albums/)
 

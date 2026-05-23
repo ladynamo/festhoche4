@@ -208,6 +208,7 @@ for (const entry of readdirSync(albumsRoot, { withFileTypes: true })) {
 for (const album of albums) {
   const page = [
     "---",
+    `title: ${JSON.stringify(album.title)}`,
     "aside: false",
     "pageClass: album-page",
     "---",
@@ -220,7 +221,7 @@ for (const album of albums) {
     `const album = galleryAlbums.find((item) => item.id === "${escape(album.id)}")!;`,
     "</script>",
     "",
-    "# {{ album.title }}",
+    `# ${album.title}`,
     "",
     "[Retour aux albums](/albums/)",
     "",

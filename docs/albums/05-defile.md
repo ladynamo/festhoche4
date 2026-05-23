@@ -1,4 +1,5 @@
 ---
+title: "Le défilé de Slow Fashion"
 aside: false
 pageClass: album-page
 ---
@@ -11,7 +12,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 const album = galleryAlbums.find((item) => item.id === "05-defile")!;
 </script>
 
-# {{ album.title }}
+# Le défilé de Slow Fashion
 
 [Retour aux albums](/albums/)
 
