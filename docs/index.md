@@ -31,7 +31,7 @@ const photographerLinks = {
   <img :src="withBase('/photographers/alicja.jpg')" alt="Alicja Pakulska" loading="lazy" decoding="async" />
   <div>
     <h3>Alicja Pakulska</h3>
-    <p>La photographe du Fest'Hoche #4.</p>
+    <p>...</p>
     <nav class="photographer-links" aria-label="Liens d'Alicja Pakulska">
       <a :href="photographerLinks.website" target="_blank" rel="noopener noreferrer">Site web</a>
       <a :href="photographerLinks.instagram" target="_blank" rel="noopener noreferrer">Instagram</a>

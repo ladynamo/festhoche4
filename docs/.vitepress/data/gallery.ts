@@ -18,7 +18,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '01-dvr',
     title: 'Disco-Vélo-Roller',
     timeRange: '10h30 - 12h',
-    description: 'La Disco-Vélo-Roller (DVR) est un convoi joyeux, festif et bruyant, pour célébrer les mobilités douces. C\'est un évènement Mai à Vélo',
+    description: 'Immanquable du Fest\'Hoche, La Disco-Vélo-Roller (DVR) est un convoi joyeux, festif et sonore, pour célébrer les mobilités douces et découvrir la ville autrement. Labellisé "Mai à Vélo", il est accessible à toutes les petites et grandes roues et s\'est déroulé cette année en édition Karaoké.',
     photos: [
       {
         src: '/gallery-full/01-dvr/DSC08070.jpg',
@@ -350,7 +350,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '02-banquet',
     title: 'Le Grand Banquet',
     timeRange: '12h - 14h',
-    description: 'Une grande auberge espagnole pour partager son repas dans un moment convivial.',
+    description: 'Une table unique sur le principe de l\'auberge espagnole, pour partager un délicieux moment convivial & rencontrer les habitants du quartier.',
     photos: [
       {
         src: '/gallery-full/02-banquet/DSC08187.jpg',
@@ -412,7 +412,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '03-sieste',
     title: 'La sieste musicale',
     timeRange: '14h - 17h',
-    description: 'En direct depuis la plage Doumergue, Raje et Rayvox vous accueillent avec une sélection musicale pleine de douceur, où délicatesse et quiétude vous étreindront le temps de cette pause suspendue ✨',
+    description: 'En direct depuis la Plage Doumergue, les radios associatives Raje & Rayvox ont proposé une sélection musicale pleine de douceur. Délicatesse et quiétude ont étreint les participants durant le temps de cette pause suspendue ✨.',
     photos: [
       {
         src: '/gallery-full/03-sieste/DSC08198.jpg',
@@ -636,7 +636,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '04-ateliers-animations-ambiance',
     title: 'Ateliers, animations et ambiance',
     timeRange: '14h - 17h',
-    description: 'Un moment pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. ',
+    description: 'Un après-midi pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. Une foule d\'activités proposée par de nombreuses structures associatives du territoire. ',
     photos: [
       {
         src: '/gallery-full/04-ateliers-animations-ambiance/DSC08185.jpg',
@@ -1060,7 +1060,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '06-danse',
     title: 'Les performances de danse',
     timeRange: '18h30 - 19h15',
-    description: 'une parenthèse dansée participative, une création inédite où le public sera invité à prendre part.',
+    description: 'une parenthèse dansée participative, proposée par l\'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part.',
     photos: [
       {
         src: '/gallery-full/06-danse/DSC08412.jpg',
@@ -1488,7 +1488,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '07-discours-radios',
     title: 'Discours et radios',
     timeRange: '',
-    description: '',
+    description: 'Interviews des artistes, des animateurs, retransmission en direct de la soirée-concerts...tout a été fait pour immortaliser cette belle journée, en collaboration avec Raje & Rayvox !',
     photos: [
       {
         src: '/gallery-full/07-discours-radios/DSC08541.jpg',

@@ -37,22 +37,22 @@ const albumDetails = {
   "01-dvr": {
     timeRange: "10h30 - 12h",
     description:
-      "La Disco-Vélo-Roller (DVR) est un convoi joyeux, festif et bruyant, pour célébrer les mobilités douces. C'est un évènement Mai à Vélo"
+      "Immanquable du Fest'Hoche, La Disco-Vélo-Roller (DVR) est un convoi joyeux, festif et sonore, pour célébrer les mobilités douces et découvrir la ville autrement. Labellisé \"Mai à Vélo\", il est accessible à toutes les petites et grandes roues et s'est déroulé cette année en édition Karaoké."
   },
   "02-banquet": {
     timeRange: "12h - 14h",
     description:
-      "Une grande auberge espagnole pour partager son repas dans un moment convivial."
+      "Une table unique sur le principe de l'auberge espagnole, pour partager un délicieux moment convivial & rencontrer les habitants du quartier."
   },
   "03-sieste": {
     timeRange: "14h - 17h",
     description:
-      "En direct depuis la plage Doumergue, Raje et Rayvox vous accueillent avec une sélection musicale pleine de douceur, où délicatesse et quiétude vous étreindront le temps de cette pause suspendue ✨"
+      "En direct depuis la Plage Doumergue, les radios associatives Raje & Rayvox ont proposé une sélection musicale pleine de douceur. Délicatesse et quiétude ont étreint les participants durant le temps de cette pause suspendue ✨."
   },
   "04-ateliers-animations-ambiance": {
     timeRange: "14h - 17h",
     description:
-      "Un moment pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. "
+      "Un après-midi pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. Une foule d'activités proposée par de nombreuses structures associatives du territoire. "
   },
   "05-defile": {
     timeRange: "17h30 - 18h",
@@ -65,11 +65,12 @@ const albumDetails = {
   "06-danse": {
     timeRange: "18h30 - 19h15",
     description:
-      "une parenthèse dansée participative, une création inédite où le public sera invité à prendre part."
+      "une parenthèse dansée participative, proposée par l'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part."
   },
   "07-discours-radios": {
     timeRange: "",
-    description: ""
+    description:
+      "Interviews des artistes, des animateurs, retransmission en direct de la soirée-concerts...tout a été fait pour immortaliser cette belle journée, en collaboration avec Raje & Rayvox !"
   },
   "08-concert-aly": {
     timeRange: "19h30 - 21h30",
