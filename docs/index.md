@@ -17,7 +17,28 @@ hero:
 <script setup lang="ts">
 import { withBase } from "vitepress";
 import { galleryAlbums, galleryPhotos } from "./.vitepress/data/gallery";
+
+const photographerLinks = {
+  website: "https://alicjapakulska.myportfolio.com/",
+  instagram: "https://www.instagram.com/li_cya/",
+  facebook: "https://www.facebook.com/alicja.pakulska"
+};
 </script>
+
+## La photographe
+
+<section class="photographer-profile">
+  <img :src="withBase('/photographers/alicja.jpg')" alt="Alicja Pakulska" loading="lazy" decoding="async" />
+  <div>
+    <h3>Alicja Pakulska</h3>
+    <p>La photographe du Fest'Hoche #4.</p>
+    <nav class="photographer-links" aria-label="Liens d'Alicja Pakulska">
+      <a :href="photographerLinks.website" target="_blank" rel="noopener noreferrer">Site web</a>
+      <a :href="photographerLinks.instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a :href="photographerLinks.facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </nav>
+  </div>
+</section>
 
 ## Les albums {#gallery}
 
