@@ -10,7 +10,7 @@ const siteBase = "/festhoche4/";
 
 export default defineConfig({
   title: "Fest'Hoche #4",
-  description: "Chronologie photo du Fest'Hoche #4",
+  description: "La galerie photo du Fest'Hoche #4",
   base: siteBase,
   lang: "fr-FR",
   cleanUrls: true,
@@ -18,7 +18,7 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.png",
     nav: [
-      { text: "Chronologie", link: "/" },
+      { text: "Galerie", link: "/" },
       {
         text: "Albums",
         items: [{ text: "Tous les albums", link: "/albums/" }, ...albumNavItems]
@@ -38,7 +38,7 @@ export default defineConfig({
       "meta",
       {
         property: "og:description",
-        content: "Chronologie photo du Fest'Hoche #4"
+        content: "La galerie photo du Fest'Hoche #4"
       }
     ],
     ["meta", { name: "theme-color", content: "#171717" }]
