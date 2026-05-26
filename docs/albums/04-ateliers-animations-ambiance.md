@@ -13,6 +13,7 @@ const album = galleryAlbums.find((item) => item.id === "04-ateliers-animations-a
 </script>
 
 # Ateliers, animations et ambiance
+<p>{{ album.description }}</p>
 
 [Retour aux albums](/albums/)
 

@@ -13,6 +13,7 @@ const album = galleryAlbums.find((item) => item.id === "08-concert-aly")!;
 </script>
 
 # Le set de Dj Aly
+<p>{{ album.description }}</p>
 
 [Retour aux albums](/albums/)
 

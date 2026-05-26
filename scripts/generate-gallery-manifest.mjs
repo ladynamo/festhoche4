@@ -222,6 +222,7 @@ for (const album of albums) {
     "</script>",
     "",
     `# ${album.title}`,
+    `<p>{{ album.description }}</p>`,
     "",
     "[Retour aux albums](/albums/)",
     "",

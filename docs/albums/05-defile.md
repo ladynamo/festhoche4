@@ -13,6 +13,7 @@ const album = galleryAlbums.find((item) => item.id === "05-defile")!;
 </script>
 
 # Le défilé de Slow Fashion
+<p>{{ album.description }}</p>
 
 [Retour aux albums](/albums/)
 

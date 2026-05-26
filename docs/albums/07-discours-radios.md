@@ -13,6 +13,7 @@ const album = galleryAlbums.find((item) => item.id === "07-discours-radios")!;
 </script>
 
 # Discours et radios
+<p>{{ album.description }}</p>
 
 [Retour aux albums](/albums/)
 

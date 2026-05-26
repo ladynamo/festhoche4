@@ -13,6 +13,7 @@ const album = galleryAlbums.find((item) => item.id === "09-concert-lorke-lorke")
 </script>
 
 # Le concert de Lorkê Lorkê
+<p>{{ album.description }}</p>
 
 [Retour aux albums](/albums/)
 
