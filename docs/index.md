@@ -31,7 +31,10 @@ const photographerLinks = {
   <img :src="withBase('/photographers/alicja.jpg')" alt="Alicja Pakulska" loading="lazy" decoding="async" />
   <div>
     <h3>Alicja Pakulska</h3>
-    <p>...</p>
+    <p>Photographe basée à Nîmes, je navigue entre travail personnel et photographie d’événements, avec un goût prononcé pour les images qui racontent plus qu’elles ne montrent.
+Je m’intéresse aux traces, aux souvenirs qui bougent, et à ce qui reste quand une histoire devient floue. Dans mes projets perso, je cherche surtout des fragments : un geste, une lumière, une présence — quelque chose qui continue de vibrer sans forcément s’expliquer.
+À côté de ça, je photographie des concerts et des festivals, où je capte l’énergie, les tensions, les moments un peu bruts qui font l’intensité d’un événement.
+Je travaille en argentique et en numérique, pas tout à fait pour les mêmes raisons : entre matière, instinct et instantané.</p>
     <nav class="photographer-links" aria-label="Liens d'Alicja Pakulska">
       <a :href="photographerLinks.website" target="_blank" rel="noopener noreferrer">Site web</a>
       <a :href="photographerLinks.instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
