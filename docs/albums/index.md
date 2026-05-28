@@ -5,6 +5,7 @@ aside: false
 <script setup lang="ts">
 import { withBase } from "vitepress";
 import { galleryAlbums } from "../.vitepress/data/gallery";
+import { getCoverPhoto } from "../lib";
 </script>
 
 # Albums
@@ -15,7 +16,7 @@ import { galleryAlbums } from "../.vitepress/data/gallery";
 
 <div class="album-shortcuts">
   <a v-for="album in galleryAlbums" :key="album.id" :href="withBase(`/albums/${album.id}`)">
-    <img :src="withBase(album.photos[0].thumb)" :alt="album.title" loading="lazy" decoding="async" />
+    <img :src="withBase(getCoverPhoto(album).thumb)" :alt="album.title" loading="lazy" decoding="async" />
     <span>{{ album.title }}</span>
     <small>{{ album.photos.length }} photos</small>
   </a>

@@ -17,6 +17,7 @@ hero:
 <script setup lang="ts">
 import { withBase } from "vitepress";
 import { galleryAlbums, galleryPhotos } from "./.vitepress/data/gallery";
+import { getCoverPhoto } from "../docs/lib.ts";
 
 const photographerLinks = {
   website: "https://alicjapakulska.myportfolio.com/",
@@ -24,8 +25,6 @@ const photographerLinks = {
   facebook: "https://www.facebook.com/alicja.pakulska"
 }; 
 
-const getCoverPhoto = (album) => 
-  album.photos.find(photo => photo.title === album.cover) ?? album.photos[0];
 </script>
 
 <aside class="event-info-card">
