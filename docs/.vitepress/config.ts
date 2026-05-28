@@ -24,15 +24,14 @@ export default defineConfig({
         items: [{ text: "Tous les albums", link: "/albums/" }, ...albumNavItems]
       }
     ],
-    footer: {
-      message: "Fest'Hoche #4",
-      copyright: `Copyright (c) ${new Date().getFullYear()}`
-    },
     outline: false
   },
   head: [
     ["link", { rel: "icon", type: "image/png", href: `${siteBase}logo.png` }],
-    ["link", { rel: "shortcut icon", type: "image/png", href: `${siteBase}logo.png` }],
+    [
+      "link",
+      { rel: "shortcut icon", type: "image/png", href: `${siteBase}logo.png` }
+    ],
     ["meta", { property: "og:title", content: "Fest'Hoche #4" }],
     [
       "meta",
