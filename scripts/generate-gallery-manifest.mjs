@@ -89,7 +89,7 @@ const albumDetails = {
     timeRange: "22h - 23h30",
     description:
       "Place au groupe toulousain Lorkê Lorkê : une plongée sensorielle portée par une voix enchanteresse, des synthés psychédéliques et de nombreuses improvisations. Leur musique oscille entre énergie et introspection, danse et contemplation.",
-    cover: "DSC08617"
+    cover: "DSC08624"
   }
 };
 
