@@ -1060,7 +1060,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '06-danse',
     title: 'Les performances de danse',
     timeRange: '18h30 - 19h15',
-    description: 'une parenthèse dansée participative, proposée par l\'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part.',
+    description: 'Une parenthèse dansée participative, proposée par l\'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part.',
     photos: [
       {
         src: '/gallery-full/06-danse/DSC08412.jpg',
