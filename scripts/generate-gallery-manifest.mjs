@@ -116,6 +116,7 @@ function listPhotos(album) {
         entry.isFile() &&
         supportedExtensions.has(extname(entry.name).toLowerCase())
     )
+    .sort((a, b) => a.name.localeCompare(b.name))
     .map((entry) => {
       const relativePath = slash(
         relative(fullRoot, join(albumRoot, entry.name))
