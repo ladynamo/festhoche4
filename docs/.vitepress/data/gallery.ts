@@ -18,7 +18,8 @@ export const galleryAlbums: GalleryAlbum[] = [
     id: '01-dvr',
     title: 'Disco-Vélo-Roller',
     timeRange: '10h30 - 12h',
-    description: 'Immanquable du Fest\'Hoche, La Disco-Vélo-Roller (DVR) est un convoi joyeux, festif et sonore, pour célébrer les mobilités douces et découvrir la ville autrement. Labellisé "Mai à Vélo", il est accessible à toutes les petites et grandes roues et s\'est déroulé cette année en édition Karaoké.',
+    description: 'Immanquable du Fest\'Hoche, La Discbo-Vélo-Roller (DVR) est un convoi joyeux, festif et sonore, pour célébrer les mobilités douces et découvrir la ville autrement. Labellisé "Mai à Vélo", il est accessible à toutes les petites et grandes roues et s\'est déroulé cette année en édition Karaoké.',
+    cover: 'DSC08083',
     photos: [
       {
         src: '/gallery-full/01-dvr/DSC08070.jpg',
@@ -351,6 +352,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Le Grand Banquet',
     timeRange: '12h - 14h',
     description: 'Une table unique sur le principe de l\'auberge espagnole, pour partager un délicieux moment convivial & rencontrer les habitants du quartier.',
+    cover: 'DSC08189',
     photos: [
       {
         src: '/gallery-full/02-banquet/DSC08187.jpg',
@@ -413,6 +415,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'La sieste musicale',
     timeRange: '14h - 17h',
     description: 'En direct depuis la Plage Doumergue, les radios associatives Raje & Rayvox ont proposé une sélection musicale pleine de douceur. Délicatesse et quiétude ont étreint les participants durant le temps de cette pause suspendue ✨.',
+    cover: 'DSC08282',
     photos: [
       {
         src: '/gallery-full/03-sieste/DSC08198.jpg',
@@ -637,6 +640,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Ateliers, animations et ambiance',
     timeRange: '14h - 17h',
     description: 'Un après-midi pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. Une foule d\'activités proposée par de nombreuses structures associatives du territoire. ',
+    cover: 'DSC08307',
     photos: [
       {
         src: '/gallery-full/04-ateliers-animations-ambiance/DSC08185.jpg',
@@ -885,6 +889,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Le défilé de Slow Fashion',
     timeRange: '17h30 - 18h',
     description: 'Sur le tapis rouge...des femmes, des hommes, des enfants, tous âges et toutes silhouettes confondues 💛Des looks issus du réemploi, choisis avec soin et pleins de créativitéParce que la mode, c’est avant tout une affaire d’expression, pas de consommation à outrance !',
+    cover: 'DSC08383',
     photos: [
       {
         src: '/gallery-full/05-defile/DSC08348.jpg',
@@ -1061,6 +1066,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Les performances de danse',
     timeRange: '18h30 - 19h15',
     description: 'Une parenthèse dansée participative, proposée par l\'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part.',
+    cover: 'DSC08423',
     photos: [
       {
         src: '/gallery-full/06-danse/DSC08412.jpg',
@@ -1489,6 +1495,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Discours et radios',
     timeRange: '',
     description: 'Interviews des artistes, des animateurs, retransmission en direct de la soirée-concerts...tout a été fait pour immortaliser cette belle journée, en collaboration avec Raje & Rayvox !',
+    cover: 'DSC08546',
     photos: [
       {
         src: '/gallery-full/07-discours-radios/DSC08541.jpg',
@@ -1539,6 +1546,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Le set de Dj Aly',
     timeRange: '19h30 - 21h30',
     description: 'DJ Aly a pris les platines pour un warm-up envoûtant, mêlant sonorités balkaniques, afro, électro organiques et tropical house. Un set hypnotique, véritable invitation au voyage.',
+    cover: 'DSC08611',
     photos: [
       {
         src: '/gallery-full/08-concert-aly/DSC08548.jpg',
@@ -1751,6 +1759,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Le concert de Lorkê Lorkê',
     timeRange: '22h - 23h30',
     description: 'Place au groupe toulousain Lorkê Lorkê : une plongée sensorielle portée par une voix enchanteresse, des synthés psychédéliques et de nombreuses improvisations. Leur musique oscille entre énergie et introspection, danse et contemplation.',
+    cover: 'DSC08617',
     photos: [
       {
         src: '/gallery-full/09-concert-lorke-lorke/DSC08615.jpg',

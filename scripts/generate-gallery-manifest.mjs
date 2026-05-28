@@ -37,22 +37,26 @@ const albumDetails = {
   "01-dvr": {
     timeRange: "10h30 - 12h",
     description:
-      "Immanquable du Fest'Hoche, La Disco-Vélo-Roller (DVR) est un convoi joyeux, festif et sonore, pour célébrer les mobilités douces et découvrir la ville autrement. Labellisé \"Mai à Vélo\", il est accessible à toutes les petites et grandes roues et s'est déroulé cette année en édition Karaoké."
+      "Immanquable du Fest'Hoche, La Discbo-Vélo-Roller (DVR) est un convoi joyeux, festif et sonore, pour célébrer les mobilités douces et découvrir la ville autrement. Labellisé \"Mai à Vélo\", il est accessible à toutes les petites et grandes roues et s'est déroulé cette année en édition Karaoké.",
+    cover: "DSC08083"
   },
   "02-banquet": {
     timeRange: "12h - 14h",
     description:
-      "Une table unique sur le principe de l'auberge espagnole, pour partager un délicieux moment convivial & rencontrer les habitants du quartier."
+      "Une table unique sur le principe de l'auberge espagnole, pour partager un délicieux moment convivial & rencontrer les habitants du quartier.",
+    cover: "DSC08189"
   },
   "03-sieste": {
     timeRange: "14h - 17h",
     description:
-      "En direct depuis la Plage Doumergue, les radios associatives Raje & Rayvox ont proposé une sélection musicale pleine de douceur. Délicatesse et quiétude ont étreint les participants durant le temps de cette pause suspendue ✨."
+      "En direct depuis la Plage Doumergue, les radios associatives Raje & Rayvox ont proposé une sélection musicale pleine de douceur. Délicatesse et quiétude ont étreint les participants durant le temps de cette pause suspendue ✨.",
+    cover: "DSC08282"
   },
   "04-ateliers-animations-ambiance": {
     timeRange: "14h - 17h",
     description:
-      "Un après-midi pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. Une foule d'activités proposée par de nombreuses structures associatives du territoire. "
+      "Un après-midi pour explorer, créer, apprendre et partager en famille autour du thème de la slow life. Une foule d'activités proposée par de nombreuses structures associatives du territoire. ",
+    cover: "DSC08307"
   },
   "05-defile": {
     timeRange: "17h30 - 18h",
@@ -60,27 +64,32 @@ const albumDetails = {
       "Sur le tapis rouge..." +
       "des femmes, des hommes, des enfants, tous âges et toutes silhouettes confondues 💛" +
       "Des looks issus du réemploi, choisis avec soin et pleins de créativité" +
-      "Parce que la mode, c’est avant tout une affaire d’expression, pas de consommation à outrance !"
+      "Parce que la mode, c’est avant tout une affaire d’expression, pas de consommation à outrance !",
+    cover: "DSC08383"
   },
   "06-danse": {
     timeRange: "18h30 - 19h15",
     description:
-      "Une parenthèse dansée participative, proposée par l'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part."
+      "Une parenthèse dansée participative, proposée par l'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part.",
+    cover: "DSC08423"
   },
   "07-discours-radios": {
     timeRange: "",
     description:
-      "Interviews des artistes, des animateurs, retransmission en direct de la soirée-concerts...tout a été fait pour immortaliser cette belle journée, en collaboration avec Raje & Rayvox !"
+      "Interviews des artistes, des animateurs, retransmission en direct de la soirée-concerts...tout a été fait pour immortaliser cette belle journée, en collaboration avec Raje & Rayvox !",
+    cover: "DSC08546"
   },
   "08-concert-aly": {
     timeRange: "19h30 - 21h30",
     description:
-      "DJ Aly a pris les platines pour un warm-up envoûtant, mêlant sonorités balkaniques, afro, électro organiques et tropical house. Un set hypnotique, véritable invitation au voyage."
+      "DJ Aly a pris les platines pour un warm-up envoûtant, mêlant sonorités balkaniques, afro, électro organiques et tropical house. Un set hypnotique, véritable invitation au voyage.",
+    cover: "DSC08611"
   },
   "09-concert-lorke-lorke": {
     timeRange: "22h - 23h30",
     description:
-      "Place au groupe toulousain Lorkê Lorkê : une plongée sensorielle portée par une voix enchanteresse, des synthés psychédéliques et de nombreuses improvisations. Leur musique oscille entre énergie et introspection, danse et contemplation."
+      "Place au groupe toulousain Lorkê Lorkê : une plongée sensorielle portée par une voix enchanteresse, des synthés psychédéliques et de nombreuses improvisations. Leur musique oscille entre énergie et introspection, danse et contemplation.",
+    cover: "DSC08617"
   }
 };
 
@@ -142,6 +151,7 @@ const albums = listAlbums(fullRoot).map((id) => ({
   title: titleFromAlbum(id),
   timeRange: albumDetails[id]?.timeRange ?? "",
   description: albumDetails[id]?.description ?? "",
+  cover: albumDetails[id]?.cover ?? "",
   photos: listPhotos(id)
 }));
 
@@ -170,6 +180,7 @@ for (const album of albums) {
   lines.push(`    title: '${escape(album.title)}',`);
   lines.push(`    timeRange: '${escape(album.timeRange)}',`);
   lines.push(`    description: '${escape(album.description)}',`);
+  lines.push(`    cover: '${escape(album.cover)}',`);
   lines.push("    photos: [");
 
   for (const photo of album.photos) {

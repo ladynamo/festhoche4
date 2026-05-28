@@ -60,8 +60,6 @@ function assetUrl(path: string) {
 }
 
 function caption(photo: Photo) {
-  const description = photo.description ? `<p>${photo.description}</p>` : "";
-
   return `<h4>${photo.title}</h4>`;
 }
 

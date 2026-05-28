@@ -22,7 +22,10 @@ const photographerLinks = {
   website: "https://alicjapakulska.myportfolio.com/",
   instagram: "https://www.instagram.com/li_cya/",
   facebook: "https://www.facebook.com/alicja.pakulska"
-};
+}; 
+
+const getCoverPhoto = (album) => 
+  album.photos.find(photo => photo.title === album.cover) ?? album.photos[0];
 </script>
 
 <aside class="event-info-card">
@@ -56,7 +59,7 @@ Je travaille en argentique et en numérique, pas tout à fait pour les mêmes ra
 
 <div class="album-shortcuts">
   <a v-for="album in galleryAlbums" :key="album.id" :href="withBase(`/albums/${album.id}`)">
-    <img :src="withBase(album.photos[0].thumb)" :alt="album.title" loading="lazy" decoding="async" />
+    <img :src="withBase(getCoverPhoto(album).thumb)" :alt="album.title" loading="lazy" decoding="async" />
     <span>{{ album.title }}</span>
     <small>{{ album.photos.length }} photos</small>
   </a>
