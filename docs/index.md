@@ -25,6 +25,11 @@ const photographerLinks = {
 };
 </script>
 
+<aside class="event-info-card">
+  Retrouvez toutes les infos sur
+  <a href="https://festhoche4.live/" target="_blank" rel="noopener noreferrer">festhoche4.live</a>
+</aside>
+
 ## La photographe
 
 <section class="photographer-profile">
@@ -59,6 +64,7 @@ Je travaille en argentique et en numérique, pas tout à fait pour les mêmes ra
 <hr/>
 
 ### La chronologie de la journée
+
 <section v-for="album in galleryAlbums" :id="album.id" :key="album.id" class="timeline-album">
   <header class="timeline-album-heading">
     <p v-if="album.timeRange" class="timeline-album-time">{{ album.timeRange }}</p>

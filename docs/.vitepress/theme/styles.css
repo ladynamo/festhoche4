@@ -153,6 +153,30 @@
   font-size: 14px;
 }
 
+.event-info-card {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 24px auto;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-soft);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.event-info-card a {
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.event-info-card a:hover,
+.event-info-card a:focus-visible {
+  text-decoration: underline;
+}
+
 .photographer-profile {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
