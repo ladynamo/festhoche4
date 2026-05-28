@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import {
+  computed,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch
+} from "vue";
 import { withBase } from "vitepress";
-import { galleryDisplayMode, initGalleryDisplayMode } from "../galleryDisplayMode";
+import {
+  galleryDisplayMode,
+  initGalleryDisplayMode
+} from "../galleryDisplayMode";
+import type { LightGallery } from "lightgallery/lightgallery";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-thumbnail.css";
 import "lightgallery/css/lg-zoom.css";
@@ -13,20 +24,35 @@ type Photo = {
   description?: string;
 };
 
+type MasonryPhoto = {
+  photo: Photo;
+  index: number;
+};
+
 const props = defineProps<{
   photos: Photo[];
 }>();
 
 const root = ref<HTMLElement | null>(null);
-let gallery: { destroy: () => void; refresh?: () => void } | null = null;
+let gallery: LightGallery | null = null;
 const photoCredit = "Photo : Alicja Pakulska";
 const masonryColumnCount = ref(4);
 const isLooseMode = computed(() => galleryDisplayMode.value === "loose");
 
 const masonryColumns = computed(() =>
   Array.from({ length: masonryColumnCount.value }, (_, columnIndex) =>
-    props.photos.filter((_, photoIndex) => photoIndex % masonryColumnCount.value === columnIndex)
+    props.photos
+      .map((photo, index): MasonryPhoto => ({ photo, index }))
+      .filter(({ index }) => index % masonryColumnCount.value === columnIndex)
   ).filter((column) => column.length > 0)
+);
+
+const galleryItems = computed(() =>
+  props.photos.map((photo) => ({
+    src: assetUrl(photo.src),
+    thumb: assetUrl(photo.thumb || photo.src),
+    subHtml: caption(photo)
+  }))
 );
 
 function assetUrl(path: string) {
@@ -40,17 +66,23 @@ function caption(photo: Photo) {
 }
 
 function updateMasonryColumnCount() {
-  masonryColumnCount.value = window.matchMedia("(max-width: 640px)").matches ? 2 : 4;
+  masonryColumnCount.value = window.matchMedia("(max-width: 640px)").matches
+    ? 2
+    : 4;
+}
+
+function openPhoto(index: number) {
+  gallery?.openGallery(index);
 }
 
 watch(masonryColumnCount, async () => {
   await nextTick();
-  gallery?.refresh?.();
+  gallery?.refresh(galleryItems.value);
 });
 
 watch(galleryDisplayMode, async () => {
   await nextTick();
-  gallery?.refresh?.();
+  gallery?.refresh(galleryItems.value);
 });
 
 onMounted(async () => {
@@ -75,7 +107,8 @@ onMounted(async () => {
   ]);
 
   gallery = lightGallery(root.value, {
-    selector: ".gallery-card",
+    dynamic: true,
+    dynamicEl: galleryItems.value,
     plugins: [lgThumbnail, lgZoom],
     speed: 300,
     download: false,
@@ -107,13 +140,14 @@ onBeforeUnmount(() => {
         :class="`gallery-column-${columnIndex + 1}`"
       >
         <a
-          v-for="photo in column"
+          v-for="{ photo, index } in column"
           :key="photo.src"
           class="gallery-card"
           :href="assetUrl(photo.src)"
           :data-src="assetUrl(photo.src)"
           :data-sub-html="caption(photo)"
           :aria-label="`Ouvrir ${photo.title}`"
+          @click.prevent="openPhoto(index)"
         >
           <img
             :src="assetUrl(photo.thumb || photo.src)"
@@ -130,13 +164,14 @@ onBeforeUnmount(() => {
 
     <template v-else>
       <a
-        v-for="photo in photos"
+        v-for="(photo, index) in photos"
         :key="photo.src"
         class="gallery-card"
         :href="assetUrl(photo.src)"
         :data-src="assetUrl(photo.src)"
         :data-sub-html="caption(photo)"
         :aria-label="`Ouvrir ${photo.title}`"
+        @click.prevent="openPhoto(index)"
       >
         <img
           :src="assetUrl(photo.thumb || photo.src)"
@@ -150,7 +185,5 @@ onBeforeUnmount(() => {
       </a>
     </template>
   </div>
-  <p v-else class="empty-gallery">
-    Cette galerie est vide...
-  </p>
+  <p v-else class="empty-gallery">Cette galerie est vide...</p>
 </template>
