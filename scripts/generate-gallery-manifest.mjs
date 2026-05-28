@@ -65,7 +65,7 @@ const albumDetails = {
   "06-danse": {
     timeRange: "18h30 - 19h15",
     description:
-      "une parenthèse dansée participative, proposée par l'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part."
+      "Une parenthèse dansée participative, proposée par l'Atelier du Contre Temps, durant laquelle le public a été invité à prendre part."
   },
   "07-discours-radios": {
     timeRange: "",
